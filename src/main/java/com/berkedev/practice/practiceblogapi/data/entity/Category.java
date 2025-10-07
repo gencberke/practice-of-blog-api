@@ -15,7 +15,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class Category {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "category_seq")
     @SequenceGenerator(name = "category_seq", sequenceName = "category_id_seq")

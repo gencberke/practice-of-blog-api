@@ -17,7 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Tag {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "tag_seq")
     @SequenceGenerator(name = "tag_seq", sequenceName = "tag_id_seq")
