@@ -16,4 +16,5 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
     /// @return
     /// "keyword'ü içeren category isimlerini getirir"
     List<Category> findByNameContainingIgnoreCase(String keyword);
+
 }
