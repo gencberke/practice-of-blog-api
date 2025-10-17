@@ -1,10 +1,7 @@
 package com.berkedev.practice.practiceblogapi.data.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,6 +13,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "tag_seq")
@@ -31,6 +29,10 @@ public class Tag {
 
     @ManyToMany(mappedBy = "tags", fetch = FetchType.LAZY)
     private List<Post> posts = new ArrayList<>();
+
+    public Tag(String name) {
+        this.name = name;
+    }
 
     @PrePersist
     void onCreate() {

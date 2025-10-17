@@ -1,10 +1,7 @@
 package com.berkedev.practice.practiceblogapi.data.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -34,6 +31,10 @@ public class Comment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
     private Post post;
+
+    public Comment(String content) {
+        this.content = content;
+    }
 
     @PrePersist
     void onCreate() {
