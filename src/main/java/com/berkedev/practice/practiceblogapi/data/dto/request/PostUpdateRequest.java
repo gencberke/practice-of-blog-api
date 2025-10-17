@@ -1,18 +1,14 @@
 package com.berkedev.practice.practiceblogapi.data.dto.request;
 
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Getter
+@Data
 public class PostUpdateRequest {
 
     @Size(min = 5, max = 200)
@@ -23,7 +19,7 @@ public class PostUpdateRequest {
 
     @Size(min = 50)
     private String content;
-    private boolean published;
+    private Boolean published;
 
     private Long categoryId;
     private List<Long> tagIds;

@@ -4,14 +4,14 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class UserUpdateRequest {
 
     @Email(message = "Email should be valid")
-    private String Email;
+    private String email;
 
     @Size(min = 6, message = "Password should be at least 6 characters")
     private String password;

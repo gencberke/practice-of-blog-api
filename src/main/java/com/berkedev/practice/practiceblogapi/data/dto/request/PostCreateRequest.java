@@ -3,10 +3,7 @@ package com.berkedev.practice.practiceblogapi.data.dto.request;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Getter
+@Data
 public class PostCreateRequest {
 
     @NotBlank(message = "title is required")
@@ -28,7 +25,7 @@ public class PostCreateRequest {
     @NotBlank
     @Size(min = 50)
     private String content;
-    private boolean published = false;
+    private Boolean published = false;
 
     @NotNull(message = "category is required")
     private Long categoryId;
